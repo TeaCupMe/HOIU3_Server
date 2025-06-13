@@ -22,7 +22,9 @@ public class Main {
         tomcat.setPort(AppProperties.getProperty("tomcat.port", 6969, Integer.class));
 
         tomcat.setHostname(AppProperties.getProperty("tomcat.host", "localhost", String.class));
-        String appBase = ".";
+
+        String appBase = AppProperties.getProperty("tomcat.appBase", ".", String.class);
+//        String appBase = ".";
         tomcat.getHost().setAppBase(appBase);
 
         tomcat.getConnector();
