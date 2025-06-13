@@ -34,9 +34,9 @@ public class SessionBrokerServlet extends HttpServlet {
         ArrayList<String> pathElements = new ArrayList<>(Arrays.asList(relativePath.split("/")));
 
         switch (pathElements.getFirst()) {
-            case "getSession": getSession(req, resp, new ArrayList<>(pathElements.subList(1, pathElements.size()))); break;
-            case "getStatus": getStatus(req, resp, new ArrayList<>(pathElements.subList(1, pathElements.size()))); break;
-            case "static": getStatic(req, resp, new ArrayList<>(pathElements.subList(1, pathElements.size())));
+            case "getSession": getSession(req, resp, new ArrayList<>(pathElements.subList(1, pathElements.size()))); return;
+            case "getStatus": getStatus(req, resp, new ArrayList<>(pathElements.subList(1, pathElements.size()))); return;
+            case "static": getStatic(req, resp, new ArrayList<>(pathElements.subList(1, pathElements.size()))); return;
         }
         Logger.getLogger().tag("ERROR").logError("Unknown request URI: " + req.getRequestURI());
         resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);

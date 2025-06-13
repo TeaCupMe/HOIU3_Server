@@ -24,7 +24,7 @@ public class Main {
         tomcat.setHostname(AppProperties.getProperty("tomcat.host", "localhost", String.class));
 
         String appBase = ".";
-        String baseDir = AppProperties.getProperty("tomcat.appBase", ".", String.class);
+        String baseDir = AppProperties.getProperty("tomcat.baseDir", ".", String.class);
 
         tomcat.setBaseDir(baseDir);
         tomcat.getHost().setAppBase(appBase);
