@@ -38,7 +38,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>Main</mainClass>
+                            <mainClass>ru.bmstu.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
