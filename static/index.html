@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $(".knight").attr("src", "http://"+window.location.host+"/static/littleKnight.png")
+        });
+
+    </script>
+    <title>Everything is working!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f5ff;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: #2c3e50;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.30;
+        }
+
+        .bg-image {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            /*background-image: url(  ${window.location.host} + "/static/littleKnight.png"');*/
+            filter: grayscale(80%) brightness(1.1);
+            opacity: 10;
+            transform-origin: center;
+        }
+
+        .bg-image:nth-child(1) {
+            top: 10%;
+            left: 5%;
+            animation: float 24s infinite linear, rotate 18s infinite linear;
+        }
+
+        .bg-image:nth-child(2) {
+            top: 70%;
+            left: 80%;
+            animation: float 20s infinite reverse linear, rotate 22s infinite reverse linear;
+        }
+
+        .bg-image:nth-child(3) {
+            top: 40%;
+            left: 60%;
+            animation: float 28s infinite linear, rotate 16s infinite linear;
+            width: 150px;
+            height: 150px;
+        }
+
+        .bg-image:nth-child(4) {
+            top: 80%;
+            left: 20%;
+            animation: float 32s infinite reverse linear, rotate 26s infinite linear;
+            width: 180px;
+            height: 180px;
+        }
+
+        .bg-image:nth-child(5) {
+            top: 20%;
+            left: 50%;
+            animation: float 18s infinite linear, rotate 20s infinite reverse linear;
+            width: 120px;
+            height: 120px;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(200px, 40px);
+            }
+            50% {
+                transform: translate(-300px, 400px);
+            }
+            75% {
+                transform: translate(50px, -400px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .message {
+            font-size: clamp(3rem, 8vw, 8rem);
+            font-weight: 700;
+            text-align: center;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            letter-spacing: -0.05em;
+            max-width: 90%;
+            z-index: 10;
+            animation: text-appear 1.5s ease-out;
+            /*background: rgba(255, 255, 255, 0.7);*/
+            padding: 20px 40px;
+            /*border-radius: 20px;*/
+            /*backdrop-filter: blur(5px);*/
+        }
+
+        @keyframes text-appear {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="background">
+    <div class="bg-image">
+        <img class="knight" alt=" " src=" ">
+    </div>
+    <div class="bg-image">
+        <img class="knight" alt=" " src=" ">
+    </div>
+    <div class="bg-image">
+        <img class="knight" alt=" " src=" ">
+    </div>
+    <div class="bg-image">
+        <img class="knight" alt=" " src=" ">
+    </div>
+    <div class="bg-image">
+        <img class="knight" alt=" " src=" ">
+    </div>
+</div>
+
+<div class="message">Everything is working!</div>
+</body>
+</html>
