@@ -1,5 +1,6 @@
 package ru.bmstu;
 
+import io.swagger.servlet.listing.ApiDeclarationServlet;
 import org.apache.catalina.Context;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;

@@ -37,6 +37,9 @@ public class SessionBrokerServlet extends HttpServlet {
             case "getSession": getSession(req, resp, new ArrayList<>(pathElements.subList(1, pathElements.size()))); return;
             case "getStatus": getStatus(req, resp, new ArrayList<>(pathElements.subList(1, pathElements.size()))); return;
             case "static": getStatic(req, resp, new ArrayList<>(pathElements.subList(1, pathElements.size()))); return;
+
+            // OpenAPI-compatible, will be the only supported version soon
+            case "session": getSession(req, resp, new ArrayList<>(pathElements.subList(1, pathElements.size()))); return;
         }
         Logger.getLogger().tag("ERROR").logError("Unknown request URI: " + req.getRequestURI());
         resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
@@ -55,6 +58,9 @@ public class SessionBrokerServlet extends HttpServlet {
 
         switch (pathElements.getFirst()) {
             case "setSession": setSession(req, resp, new ArrayList<>(pathElements.subList(1, pathElements.size()))); return;
+
+            // OpenAPI-compatible, will be the only supported version soon
+            case "session": setSession(req, resp, new ArrayList<>(pathElements.subList(1, pathElements.size()))); return;
             default: resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
         }
 
